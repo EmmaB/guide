@@ -1,0 +1,29 @@
+
+%header.site-header.sticky.navbar-fullwidth.navbar-transparent
+  / Top navbar &amp; branding
+  %nav.navbar.navbar-default
+    .container
+      / Toggle buttons and brand
+      .navbar-header
+        %button.navbar-toggle{"aria-controls" => "navbar", "aria-expanded" => "true", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+          %span.glyphicon.glyphicon-option-vertical
+        %button.navbar-toggle.for-sidebar{"data-toggle" => "offcanvas", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => root_path} Bibliocloud Guide
+      / END Toggle buttons and brand
+      / Top navbar
+      - unless current_page?(root_url)
+        = form_tag articles_path, :class => 'header-search-model', :id => "article-search",   method: :get do
+          = text_field_tag :query, params[:query], :placeholder => " Search", :class => "large_input"
+
+
+      #navbar.navbar-collapse.collapse{"aria-expanded" => "true", :role => "banner"}
+        %ul.nav.navbar-nav.navbar-right
+          %li.active
+            = link_to "Basics", article_path(Article.find_by(:title => "Basics") || Article.first)
+          %li
+            %a{:href => "https://bibliosupport.zendesk.com/hc/en-gb/requests/new", :target => "_blank"} Support
+          %li.hero
+            %a{:href => "http://v4.bibliocloud.com"} Sign in

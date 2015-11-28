@@ -1,0 +1,27 @@
+.row
+  .col-sm-1
+  .col-sm-10
+    %h3 Search results
+    %table.table
+      %thead
+        %tr
+          %th Section
+          %th Title
+          %th
+          %th
+          %th
+      %tbody
+        - @articles.each do |article|
+          %tr
+            %td= article.section.name
+            %td= article.title
+            %td= truncate(article.body, :length => 100)
+            - if user_signed_in?
+              %td= link_to 'Edit', edit_article_path(article)
+              %td= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }
+            - else
+              %td= link_to "Read more", article_path(article)
+    - if user_signed_in?
+      %br
+        = link_to 'New Article', new_article_path
+  .col-sm-1

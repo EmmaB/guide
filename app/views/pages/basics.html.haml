@@ -1,0 +1,89 @@
+= render "layouts/sidebar"
+%main.container-fluid
+  .row
+    / Main content
+    %article.main-content{:role => "main"}
+      %header
+        %h1 Boxed sidebar
+        %p To give you more layout varieties, we implemented a full-width layout with a fixed sidebar on left/right. Also, this sidebar has two color variations.
+        %ol.toc
+          %li
+            %a{:href => "#page_layout"} Page Layout
+          %li
+            %a{:href => "#variations"} Variations
+      %section
+        %h2#page_layout Page Layout
+        %p Please consider that this layout has a bit different html structure that other layouts.
+        %pre.line-numbers
+          %code.language-markup
+            :preserve
+
+              &lt;!DOCTYPE html&gt;
+              &lt;html lang=&quot;en&quot;&gt;
+                &lt;head&gt;&lt;/head&gt;
+                &lt;body&gt;
+
+                  &lt;!-- Site header --&gt;
+                  &lt;header class=&quot;site-header&quot;&gt;
+
+                  &lt;/header&gt;
+                  &lt;!-- END Site header --&gt;
+
+
+                  &lt;!-- Sidebar --&gt;
+                  &lt;aside class=&quot;sidebar sidebar-boxed&quot;&gt;
+
+                  &lt;/aside&gt;
+                  &lt;!-- END Sidebar --&gt;
+
+
+                  &lt;main class=&quot;container-fluid&quot;&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+
+                      &lt;!-- Main content --&gt;
+                      &lt;article class=&quot;main-content&quot; role=&quot;main&quot;&gt;
+
+                      &lt;/article&gt;
+                      &lt;!-- END Main content --&gt;
+
+
+                      &lt;!-- Footer --&gt;
+                      &lt;footer class=&quot;site-footer&quot;&gt;
+
+                      &lt;/footer&gt;
+                      &lt;!-- END Footer --&gt;
+
+                    &lt;/div&gt;
+                  &lt;/main&gt;
+
+                &lt;/body&gt;
+              &lt;/html&gt;
+      %section
+        %h2#variations Variations
+        %p
+          You can place this sidebar in left or right side of your page. By default it's left-sided, but you can simply add
+          %code sidebar-right
+          class to the
+          %code .sidebar-boxed
+          tag.
+        %p
+          Also, by adding
+          %code sidebar-dark
+          class to the
+          %code .sidebar-boxed
+          you can change the color of the sidebar.
+        %h3 Try it
+        .btn-group{"data-toggle" => "buttons"}
+          %label#sb-left-side.btn.btn-primary.active
+            %input{:autocomplete => "off", :checked => "", :name => "options", :type => "radio"}
+              Left sided (default)
+          %label#sb-right-side.btn.btn-primary
+            %input{:autocomplete => "off", :name => "options", :type => "radio"}
+              Right sided
+        .btn-group{"data-toggle" => "buttons"}
+          %label#sb-skin-light.btn.btn-primary.active
+            %input{:autocomplete => "off", :checked => "", :name => "options", :type => "radio"}
+              Light skin (default)
+          %label#sb-skin-dark.btn.btn-primary
+            %input{:autocomplete => "off", :name => "options", :type => "radio"}
+              Dark skin

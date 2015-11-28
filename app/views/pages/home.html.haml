@@ -1,0 +1,82 @@
+%header.site-header.sticky.navbar-fullwidth.navbar-transparent
+  = render "layouts/nav_bar"
+  .banner.banner-full-height.overlay-black{:style => "background-image: url(images/banner1.jpg);"}
+    .container.text-center
+      %h1 Bibliocloud Guides
+      %br
+        %br
+          %br
+            %br
+              %p
+                .btn.btn-white.btn-xl= link_to "Getting started", article_path(Article.find_by(:title => "Why Bibliocloud") || Article.first)
+
+    %ul.social-icons
+      %li
+        %a{:href => "http://twitter.com/has_many_books"}
+          %i.fa.fa-twitter
+      %li
+        %a{:href => "http://www.coderead.co"}
+          %i.fa.fa-globe
+      %li
+        %a{:href => "https://uk.linkedin.com/in/emmabarnes"}
+          %i.fa.fa-linkedin
+      %li
+        %a{:href => "http://twitter.com/bibliocloud"}
+          %i.fa.fa-twitter
+      %li
+        %a{:href => "http://bibliocloud.com"}
+          %i.fa.fa-globe
+  / END Banner
+%main.container
+  .row
+    / Sidebar
+    %aside.col-md-2.col-sm-2.sidebar
+
+
+    / END Sidebar
+    / Main content
+    %article.col-md-9.col-sm-9.main-content{:role => "main"}
+      %header
+        %h1 Bibliocloud makes you a better publisher
+        %p
+          %strong Bibliocloud
+          is the easiest way for you and your team to get control of your publishing workflow, and the Guide can help you get started.
+        %p
+          It holds all your information:
+          %ul
+            %li product information such as the title, ISBN, format, subject classifications and a host of other data to make your products discoverable
+            %li contract information – the details of the deal you made with the author or agent
+            %li your address book
+            %li production information – the details of your production runs, including estimates, specs and orders
+            %li rights information – the rights you’ve licensed, and then sub-licensed
+            %li sales, payments and advances information
+        %p
+          And it does a bunch of publishing tasks for you, including:
+          %ul
+            %li generating AI pdfs
+            %li generating batches of royalty statements
+            %li sending ONIX to organisations such as Nielsen and Amazon
+            %li sending print orders to your printers
+
+        %p
+          It helps with the process of getting books from being a glint in the commissioning editor’s eye to an actual stack of copies on the shelf in Waterstones:
+          %ul
+            %li Schedules with a Gantt chart view
+            %li Acquisition management
+            %li Forecasting and actuals on title and product-level P&Ls
+        %p
+          And it’s pragmatic, with tools to help in the real publishing world:
+          %ul
+            %li Amazon real-time data checker
+            %li Discoverability scorecard
+            %li BIC Excellence scorecard
+            %li Incremental ONIX, API and Excel template exporters for a growing list of third parties including Samsung, Qbend, Ingram etc
+            %li Background FTPing of covers and data
+            %li Dead simple sales importers from your distributor and Amazon
+            %li One-click Rights Guide
+            %li One-click multi-page catalogues, straight into XML for import into an InDesign template
+            %li Product API for integration with your customer facing website and third-party services
+        %p
+          The whole shebang is helped along with a handy toolkit: APIs, bulk importers and exporters, advanced search-and-filter tools, a lot of templates and other helpful tools to reduce the amount of data entry you have to do.
+        %p
+          We also make implementation as painless as possible. One of the biggest hurdles that publishers feel they face is to unpick their existing data and get it into a state where it can be imported into a new system. Thankfully we’re dab hands at legacy data migration. We’ve seen it all, and we’ll take on the burden of your data migration as part of your Bibliocloud implementation.

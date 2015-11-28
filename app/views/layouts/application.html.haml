@@ -1,0 +1,38 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    %meta{:content => "", :name => "bibliocloud guides"}
+    %meta{:content => "", :name => "documentation saas publishing"}
+    %title Bibliocloud Guides
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:100,300,400,500%7CLato:300,400", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "/apple-touch-icon.png", :rel => "apple-touch-icon"}
+    %link{:href => "assets/img/favicon.ico", :rel => "icon"}
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    = render "layouts/nav_bar"
+    = yield
+  %footer.site-footer
+    .container
+      %a#scroll-up{:href => "#"}
+        %i.fa.fa-angle-up
+      .row
+        .col-md-3.col-sm-3
+        .col-md-3.col-sm-3
+          %p Copyright General Products Ltd &copy; 2015. All rights reserved
+        .col-md-6.col-sm-6
+          %ul.footer-menu
+            %li
+              %a{:href => "https://drive.google.com/folderview?id=0B_ZSFbVemp5mb012UTZ4US1vWnM&usp=sharing"} Monthly update archive
+            %li
+              %a{:href => "mailto:info@bibliocloud.com"} Contact us
+            - if user_signed_in?
+              = link_to "Sign out",  destroy_user_session_path,  :method => :delete
+  :javascript
+    $(document).ready(function() {
+    $('li.second').hide();
+    });

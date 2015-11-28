@@ -1,0 +1,27 @@
+= render "layouts/sidebar"
+%main.container-fluid
+  %img{:src=>@article.random_image, :class => "banner_top"}
+
+  .row
+    .guide-topic-content.col-sm-12.col-md-9
+
+      / Main content
+      %article.main-content{:role => "main"}
+
+        %header
+          %h1.head= @article.title
+
+        %section
+          = raw @article.body
+
+    .col-md-3
+      %hr
+
+      .center= social_share_button_tag(@article.title, :url => request.original_url, :popup => "true")
+
+      .highlight.basics
+        .inner
+          %p.uppercase What you’ll learn:
+          %ul
+            - @article.what_we_learn.each do |learning|
+              %li= learning

@@ -1,0 +1,333 @@
+
+.banner.banner-full-height.overlay-black{:style => "background-image: url(assets/img/banner1.jpg);"}
+  .container.text-center
+    %h1 Online Documentation Template
+    %h5
+      %strong theDocs
+      reduce the burden of developing documentation for your next product.
+    %br
+      %br
+        %br
+          %br
+            %p
+              %a.btn.btn-white.btn-xl.btn-outline{:href => "#getting_started", :role => "button"} Getting Started
+  %ul.social-icons
+    %li
+      %a{:href => "#"}
+        %i.fa.fa-twitter
+    %li
+      %a{:href => "#"}
+        %i.fa.fa-facebook
+    %li
+      %a{:href => "#"}
+        %i.fa.fa-linkedin
+    %li
+      %a{:href => "#"}
+        %i.fa.fa-dribbble
+  / END Banner
+%main.container
+  .row
+    / Sidebar
+    %aside.col-md-3.col-sm-3.sidebar
+      %ul.sidenav.dropable.sticky
+        %li
+          %a.active{:href => "index.html"} Overview
+        %li
+          %a{:href => "#"} Layouts
+          %ul
+            %li
+              %a{:href => "layout_boxed_left-sidebar.html"} Boxed - Left sidebar
+            %li
+              %a{:href => "layout_boxed_right-sidebar.html"} Boxed - Right sidebar
+            %li
+              %a{:href => "layout_boxed_no-sidebar.html"} Boxed - No sidebar
+            %li
+              %a{:href => "layout_full_left-sidebar.html"} Fullwidth - Left sidebar
+            %li
+              %a{:href => "layout_full_right-sidebar.html"} Fullwidth - Right sidebar
+            %li
+              %a{:href => "layout_full_no-sidebar.html"} Fullwidth - No sidebar
+            %li
+              %a{:href => "layout_sidebar_boxed.html"} Boxed sidebar
+            %li
+              %a{:href => "layout_skin.html"} Skins
+        %li
+          %a{:href => "#"} Components
+          %ul
+            %li
+              %a{:href => "component_navbar.html"} Navbar
+            %li
+              %a{:href => "component_banner.html"} Banner
+            %li
+              %a{:href => "component_banner_sample1.html"} Banner - Sample 1
+            %li
+              %a{:href => "component_banner_sample2.html"} Banner - Sample 2
+            %li
+              %a{:href => "component_banner_sample3.html"} Banner - Sample 3
+            %li
+              %a{:href => "component_sidebar.html"} Sidebar - default
+            %li
+              %a{:href => "component_sidebar_line.html"} Sidebar - line
+            %li
+              %a{:href => "component_sidebar_icon.html"} Sidebar - icon
+            %li
+              %a{:href => "component_footer.html"} Footer
+        %li
+          %a{:href => "#"} Basic styling
+          %ul
+            %li
+              %a{:href => "css_typography.html"} Typography
+            %li
+              %a{:href => "css_button.html"} Buttons
+            %li
+              %a{:href => "css_label.html"} Labels
+            %li
+              %a{:href => "css_table.html"} Tables
+            %li
+              %a{:href => "css_alert.html"} Alerts
+            %li
+              %a{:href => "css_icon.html"} Icons
+        %li
+          %a{:href => "#"} Elements
+          %ul
+            %li
+              %a{:href => "element_toc.html"} Table of contents
+            %li
+              %a{:href => "element_code.html"} Code view
+            %li
+              %a{:href => "element_view.html"} Views
+            %li
+              %a{:href => "element_promo.html"} Promo
+            %li
+              %a{:href => "element_files.html"} Included files
+            %li
+              %a{:href => "element_requirement.html"} Requirements
+            %li
+              %a{:href => "element_tab.html"} Tabs
+            %li
+              %a{:href => "element_step.html"} Steps
+            %li
+              %a{:href => "element_media.html"} Media
+            %li
+              %a{:href => "element_jumbotron.html"} Jumbotron
+            %li
+              %a{:href => "element_faq.html"} FAQ
+    / END Sidebar
+    / Main content
+    %article.col-md-9.col-sm-9.main-content{:role => "main"}
+      %header
+        %h1 theDocs
+        %p
+          %strong theDocs
+          is a html online documentation template which can help you rapidly develop your next software's documentation. It can be used for documenting API, frameworks, plugins, templates, etc. It's based on Bootstrap and contains a lot of components to easily make your interactive documentation.
+        %p
+          %b theDocs
+          comes with a simple design and puts its focus on readability and functionality. It has a lot of useful components to reduce the burden of writing a documentation for your next product. With the help of
+          %b theDocs
+          just focus on the quality of writing; don't worry about the quality of design and ease of writing. We guarantee them!
+        %ol.toc
+          %li
+            %a{:href => "#features"} Features
+          %li
+            %a{:href => "#what_included"} What's included
+          %li
+            %a{:href => "#getting_started"} Getting started
+          %li
+            %a{:href => "#continue_reading"} Continue reading
+      %section
+        %h2#features Features
+        %p This template has everything that you need to develop your next documentation. Check out some of features that we have in this template. To know more about features of theDocs, continue reading our documentation and check our available components.
+        %br
+          .row
+            .col-md-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-tv
+                %h3 Responsive
+                %p Your documentation works on any device: desktop, tablet or mobile.
+            .col-lg-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-wrench
+                %h3 Customizable
+                %p You can easily read, edit, and write your own code, or change everything.
+            .col-lg-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-cubes
+                %h3 UI Elements
+                %p There is a bunch of useful and necessary elements for writing documentation.
+            .col-lg-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-code
+                %h3 Clean Code
+                %p You can find our code well organized, commented and readable.
+            .col-lg-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-file-text-o
+                %h3 Documented
+                %p As you can see in this online documentation, we provided a comprehensive documentation.
+            .col-lg-4.col-sm-6
+              .promo.small-icon.left
+                %i.fa.fa-download
+                %h3 Free Updates
+                %p When you purchase this template, you'll freely receive future updates.
+          %br
+            %br
+              .row
+                .col-md-6
+                  %ul
+                    %li HTML5 & CSS3
+                    %li Built with Bootstrap 3.3
+                    %li SASS files included
+                    %li Grunt Tasks
+                    %li Responsive design
+                    %li Well documented
+                    %li Developer friendly code
+                    %li 34 HTML page
+                    %li 30+ component variation
+                    %li 13 skin color
+                    %li Easy to customize: sidebar, header, color scheme, content
+                    %li FontAwesome 400+ icons
+                    %li Glyphicons 250+ icons
+                    %li Wide & Boxed Layouts
+                    %li Left/Right/No sidebar
+                    %li Different navbar sizes & variation
+                    %li Different banner sizes & variation
+                .col-md-6
+                  %ul
+                    %li Different sidebar variation
+                    %li 3 Type of views
+                    %li Sticky sidebar
+                    %li Syntax highlighter
+                    %li Button variations
+                    %li Tabs
+                    %li Alerts
+                    %li Callouts
+                    %li Promo boxes
+                    %li Script requirements
+                    %li Directory explanation
+                    %li File tree
+                    %li Table of content
+                    %li Changelog table
+                    %li Property table
+                    %li Instance searchable FAQ
+                    %li Responsive video (YouTube, Vimeo, Self-hosted)
+                    %li Extended Jumbotron
+      %section
+        %h2#what_included What's included
+        %p Once you download the template, you can see a folder with several files and sub folders. You can read description of some important files in continue.
+        .file-tree
+          %ul
+            %li.is-folder.open
+              assets
+              %ul
+                %li.is-folder.open
+                  css
+                  %ul
+                    %li.is-file
+                      custom.css
+                      %i Write your custom styles in this file
+                    %li.is-file
+                      skin-*.css
+                      %i Skin styles
+                    %li.is-file
+                      theDocs.all.min.css
+                      %i Minified version of all required CSS files
+                %li.is-folder
+                  fonts
+                  %i FontAwesome and Glyphicons
+                %li.is-folder
+                  img
+                  %i Here is a place to put your media files like logo, images, videoes, etc.
+                %li.is-folder.open
+                  js
+                  %ul
+                    %li.is-file
+                      theDocs.all.min.js
+                      %i Minified version of all required Javascript files
+                    %li.is-file
+                      custom.js
+                      %i Write your custom scripts in this file
+                %li.is-folder
+                  vendors
+                  %i Bootstrap, jQuery, FontAwesome, etc.
+            %li.is-file layout_boxed_no-sidebar.html
+            %li.is-file layout_boxed_left-sidebar.html
+            %li.is-file layout_boxed_right-sidebar.html
+            %li.is-file layout_full_no-sidebar.html
+            %li.is-file layout_full_left-sidebar.html
+            %li.is-file layout_full_right-sidebar.html
+        %p We just included layouts files for your start point. You should choose one of those and start customizing components such as navbar, banner, sidebar and footer to make a starter file for your documentation. You can access to all of the available files in "Documentation" or "src" folder.
+      %section
+        %h2#getting_started Getting started
+        %p Start your documentation template by editing one of the starter files. It won't take more than 15 minutes to start. Read the step-by-step guide:
+        %br
+          %ul.step-text
+            %li
+              %h5 Prepare your directory
+              %p Start your documentation project by makeing a copy of start-kit folder to your desired directory. This folder contains essential files to develop your documentation based on theDocs.
+            %li
+              %h5 Choose a layout
+              %p
+                Decide about your documentation layout. Boxed or full-width? Do you need a sidebar on the left of page, on the right of page, or a page without sidebar? Choose your desired layout from one of the starter files and start by editing it. Even it's better to decide about
+                %a{:href => "layout_skin.html"} skin
+                right now.
+            %li
+              %h5 Design your header
+              %p
+                %a{:href => "component_navbar.html"} The header
+                of the page is inside
+                %code header
+                tag. Customize it by editing logo and navigation links. If you need, you can include a
+                %a{:href => "component_banner.html"} banner
+                as well.
+            %li
+              %h5 Design your footer
+              %p
+                %a{:href => "component_footer.html"} The footer
+                of the page is inside
+                %code footer
+                tag. Customize it by editing copyright text and navigation links.
+            %li
+              %h5 Design your sidebar
+              %p
+                If you've already planned your documentation pages, you can categorize them and design your
+                = succeed "." do
+                  %a{:href => "component_sidebar.html"} sidebar
+            %li
+              %h5 Start writing
+              %p Make a copy of your starter page and start writing your documentation with the help of our wonderful elements.
+      %section
+        %h2#continue_reading Continue reading
+        %p It's time to see and read other pages of this documentation to learn how you can use different elements for you own documentation. Don't worry about reading time, you can check each element in a couple of minutes and come back to the documentation page once you want to use them. You can use them by just make a copy and paste.
+        %ul.categorized-view.view-col-3
+          %li
+            %h5 Components
+            %a{:href => "component_navbar.html"} Navbar
+            %a.active{:href => "component_banner.html"} Banner
+            %a{:href => "component_banner_sample1.html"} Banner - Sample 1
+            %a{:href => "component_banner_sample2.html"} Banner - Sample 2
+            %a{:href => "component_banner_sample3.html"} Banner - Sample 3
+            %a{:href => "component_sidebar.html"} Sidebar - default
+            %a{:href => "component_sidebar_line.html"} Sidebar - line
+            %a{:href => "component_sidebar_icon.html"} Sidebar - icon
+            %a{:href => "component_footer.html"} Footer
+          %li
+            %h5 Basic Styling
+            %a{:href => "css_typography.html"} Typography
+            %a{:href => "css_button.html"} Buttons
+            %a{:href => "css_label.html"} Labels
+            %a{:href => "css_table.html"} Tables
+            %a{:href => "css_alert.html"} Alerts
+            %a{:href => "css_icon.html"} Icons
+          %li
+            %h5 Elements
+            %a{:href => "element_toc.html"} Table of contents
+            %a{:href => "element_code.html"} Code view
+            %a{:href => "element_view.html"} Views
+            %a{:href => "element_promo.html"} Promo
+            %a{:href => "element_files.html"} Included files
+            %a{:href => "element_requirement.html"} Requirements
+            %a{:href => "element_tab.html"} Tabs
+            %a{:href => "element_step.html"} Steps
+            %a{:href => "element_media.html"} Media
+            %a{:href => "element_jumbotron.html"} Jumbotron
+            %a{:href => "element_faq.html"} FAQ

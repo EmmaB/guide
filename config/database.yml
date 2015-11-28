@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: postgres://postgres@localhost/guide_development
