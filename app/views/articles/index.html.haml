@@ -13,7 +13,7 @@
       %tbody
         - @articles.each do |article|
           %tr
-            %td= article.section.name
+            %td= article.section.try(:name)
             %td= article.title
             %td= truncate(article.body, :length => 100)
             - if user_signed_in?
