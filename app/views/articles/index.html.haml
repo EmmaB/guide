@@ -15,7 +15,7 @@
           %tr
             %td= article.section.try(:name)
             %td= article.title
-            %td= truncate(article.body, :length => 100)
+            %td= truncate(sanitize(article.body, :tags=>[]), :length => 150)
             - if user_signed_in?
               %td= link_to 'Edit', edit_article_path(article)
               %td= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }
