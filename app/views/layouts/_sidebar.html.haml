@@ -9,7 +9,7 @@
             .accordion-spacer
               %span.spacer= segment
               %hr
-              - Section.where(:section_id => nil, :area => segment).each do |top_level_section|
+              - Section.where(:section_id => nil, :area => segment).order(:created_at).each do |top_level_section|
                 - if [top_level_section.id, top_level_section.sections.pluck(:id)].flatten.include? @article.section_id
                   - klassb = 'in'
                   - klassd = 'collapsed'
@@ -26,7 +26,7 @@
                     .accordion-inner
                       %div{:id => top_level_section.id, :class => 'accordion'}
                         .accordion-group.panel
-                          - top_level_section.sections.each do |section|
+                          - top_level_section.sections.order(:created_at).each do |section|
                             - if section.id == @article.section_id
                               - klassa = 'in'
                               - klassc = 'collapsed'
@@ -39,6 +39,6 @@
                             %div{:id => section.id, :class => "collapse accordion-body #{klassa}"}
                               .accordion-inner
                                 %ul.nav.nav-list
-                                  - section.articles.each do |article|
+                                  - section.articles.order(:created_at).each do |article|
                                     %li
                                       = link_to article.title, article_path(article)
