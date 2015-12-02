@@ -42,11 +42,11 @@ class SectionsController < ApplicationController
   def update
     respond_to do |format|
       if @section.update(section_params)
-        format.html { redirect_to @section, notice: 'Section was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to(@section, :notice => 'User was successfully updated.') }
+        format.json { respond_with_bip(@section) }
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @section.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@section) }
       end
     end
   end
@@ -69,6 +69,6 @@ class SectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def section_params
-      params.require(:section).permit(:user_id, :name, :description, :section_id)
+      params.require(:section).permit(:user_id, :name, :description, :section_id, :sequence)
     end
 end

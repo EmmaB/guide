@@ -1,0 +1,28 @@
+%h1 Sections
+%table.table
+  %thead
+    %tr
+      %th
+      %th Parent
+      %th Name
+      %th Description
+      %th
+      %th
+      %th
+  %tbody
+    - @sections.order(:sequence).each do |section|
+      %tr
+        %td= best_in_place section, :sequence
+        %td= section.section_id
+        %td= section.name
+        %td= section.description
+
+        %td= link_to 'Edit', edit_section_path(section)
+        %td= link_to 'Delete', section, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+  = link_to 'New Section', new_section_path
+:javascript
+  $(document).ready(function() {
+  /* Activating Best In Place */
+  $(".best_in_place").best_in_place();
+  });

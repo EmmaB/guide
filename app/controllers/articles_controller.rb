@@ -42,11 +42,11 @@ class ArticlesController < ApplicationController
   def update
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to(@article, :notice => 'article was successfully updated.') }
+        format.json { respond_with_bip(@article) }
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @article.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@article) }
       end
     end
   end
@@ -69,6 +69,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:section_id, :title, :body, :user_id, :what_we_learn)
+      params.require(:article).permit(:section_id, :title, :body, :user_id, :what_we_learn, :sequence)
     end
 end

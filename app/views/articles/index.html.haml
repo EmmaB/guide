@@ -5,14 +5,18 @@
     %table.table
       %thead
         %tr
+          - if user_signed_in?
+            %th
           %th Section
           %th Title
           %th
           %th
           %th
       %tbody
-        - @articles.each do |article|
+        - @articles.order(:sequence).each do |article|
           %tr
+            - if user_signed_in?
+              %td= best_in_place article, :sequence
             %td= article.section.try(:name)
             %td= article.title
             %td= truncate(sanitize(article.body, :tags=>[]), :length => 150)
