@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
         set_margin = '0.3'
         html = render_to_string(:layout => "plain", :action => 'pdf',  :formats => :html)
         kit  = PDFKit.new(html, :page_size => "Letter",     :print_media_type => true, :orientation => 'Portrait', :margin_top => set_margin+'in', :margin_right => set_margin+'in', :margin_bottom => set_margin+'in', :margin_left => set_margin+'in')
-        kit.stylesheets << "#{Rails.root}/assets/stylesheets/pdf.css"
+        kit.stylesheets << "#{Rails.root}/assets/stylesheets/pdf.css.scss"
         send_data kit.to_pdf, :filename => "Bibliocloud Manual #{Time.now}.pdf", :type => 'application/pdf'
       }
     end
