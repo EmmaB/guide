@@ -15,4 +15,7 @@
         %ul.nav.nav-list
           - section.articles.order(:sequence).each do |article|
             %h7= article.title
+            %p
+              %div{:class => 'bs-callout bs-callout-info'}
+                %i= article.what_we_learn
             %p= simple_format article.body
