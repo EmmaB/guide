@@ -17,5 +17,9 @@
             %h7= article.title
             %p
               %div{:class => 'bs-callout bs-callout-info'}
-                %i= article.what_we_learn
+                %small.uppercase
+                  In this section:
+                %ul
+                  - article.what_we_learn.each do |learn|
+                    %li= learn
             %p= simple_format article.body
