@@ -14,7 +14,6 @@
         %h6= section.name
         %ul.nav.nav-list
           - section.articles.order(:sequence).each do |article|
-            %h7= article.title
             %p
               %div{:class => 'bs-callout bs-callout-info'}
                 %small.uppercase
@@ -24,4 +23,5 @@
                   - article.what_we_learn.each do |learn|
                     %li
                       = learn
+            %h7= article.title
             %p= simple_format article.body
