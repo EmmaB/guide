@@ -12,8 +12,10 @@ select{*font-size:100%;}legend{color:#000;}
 
 @font-face {
   font-family: "Roboto";
-  src:url(asset_path("Roboto-Regular.ttf"));
-  src:url(asset_path("Roboto-Regular.ttf")) format("truetype");
+  src:url(asset_path("Roboto-Regular.ttf")),
+    url(asset_path("Roboto-Regular.ttf")) format("truetype"),
+    url(asset_path("Roboto-Regular.svg")) format("svg"),
+    url(asset_path("Roboto-Regular.woff")) format("woff");
   font-weight: normal;
   font-style: normal;
 }
