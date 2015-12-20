@@ -138,6 +138,7 @@ GEM
     warden (1.2.3)
       rack (>= 1.0)
     wkhtmltopdf (0.1.2)
+    wkhtmltopdf-heroku (2.12.2.4)
 
 PLATFORMS
   ruby
@@ -163,6 +164,7 @@ DEPENDENCIES
   social-share-button
   uglifier (>= 1.3.0)
   wkhtmltopdf
+  wkhtmltopdf-heroku
 
 BUNDLED WITH
    1.10.6
