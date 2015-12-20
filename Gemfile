@@ -21,7 +21,6 @@ gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'social-share-button'
 gem 'pg_search'
-gem 'wkhtmltopdf-heroku'
 gem 'best_in_place'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
