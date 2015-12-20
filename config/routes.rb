@@ -2,7 +2,11 @@ Guide::Application.routes.draw do
   resources :sections
 
   devise_for :users
-  resources :articles
+  resources :articles do
+    collection do
+      get "pdf"
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

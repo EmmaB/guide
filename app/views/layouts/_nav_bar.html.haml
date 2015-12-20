@@ -23,6 +23,8 @@
         %ul.nav.navbar-nav.navbar-right
           %li.active
             = link_to "Basics", article_path(Article.find_by(:title => "Basics") || Article.first)
+          %li= link_to "PDF", articles_path(:format => :pdf)
+
           %li
             %a{:href => "https://bibliosupport.zendesk.com/hc/en-gb/requests/new", :target => "_blank"} Support
           %li.hero

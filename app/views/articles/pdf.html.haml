@@ -1,0 +1,18 @@
+- ["Workshops", "Resources"].each do |segment|
+  %br
+  %h1= "Section: #{segment}"
+  - top_level_section_name   = ""
+  - top_level_section_number = 1
+  - Section.where(:section_id => nil, :area => segment).order(:sequence).each_with_index do |top_level_section, i|
+    %div.pb_after
+      - unless top_level_section.name == top_level_section_name
+        %h2= "#{top_level_section_number}: #{top_level_section.name}"
+      - top_level_section_name = top_level_section.name
+      - top_level_section_number += 1
+      %hr
+      - top_level_section.sections.order(:sequence).each do |section|
+        %h6= section.name
+        %ul.nav.nav-list
+          - section.articles.order(:sequence).each do |article|
+            %h5= article.title
+            %p= simple_format article.body

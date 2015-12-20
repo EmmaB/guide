@@ -1,0 +1,91 @@
+/* Reset CSS. http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css  */
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,
+cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}
+caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,
+select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,
+select{*font-size:100%;}legend{color:#000;}
+
+/* Your Base Foundation */
+html,body { font-family: Roboto; font-size:15px; line-height: 22px }
+h1 { font-family: Roboto; font-size:34px;  margin-bottom: 30px}
+h2 { font-family: Roboto; font-size:28px; margin-top: 20px; margin-bottom: 3px; color: #6D5CAE; }
+h6 { font-family: Roboto; font-size:25px; margin-top: 30px !important; font-weight: 400 }
+h4 { font-family: Roboto; font-size:23px; line-height: 20px; margin-top: 10px; }
+h5 { font-family: Roboto; font-size:19px; line-height: 20px; margin-top: 15px; margin-bottom: 10px; font-weight: 500}
+b { font-weight:500 !important; }
+hr     { border:0; margin:0; padding:0; height:1px; color:#6D5CAE; background-color:#6D5CAE; }
+p {margin-bottom: 10px }
+
+
+/* Page Breaks */
+.pb_before { page-break-before:always !important; }
+.pb_after  { page-break-after:always !important; }
+.pbi_avoid { page-break-inside:avoid !important; }
+
+
+li {
+  margin-left: 20px;
+  margin-top:0px;
+  margin-bottom:5px
+}
+
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code {
+    border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+.bs-callout-default {
+    border-left-color: #777;
+}
+.bs-callout-default h4 {
+    color: #777;
+}
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+    color: #5bc0de;
+}

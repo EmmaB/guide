@@ -5,6 +5,21 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles      = Article.text_search(params[:query])
+    respond_to do |format|
+      format.html {}
+
+      format.pdf {
+        @pdf = true
+        html = render_to_string(:layout => "plain", :action => 'pdf',  :formats => :html)
+        kit  = PDFKit.new(html, :margin_right => '1.5in', :margin_left => '0.75in', :toc => "")
+        kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
+        send_data kit.to_pdf, :filename => "Bibliocloud Manual #{Time.now}.pdf", :type => 'application/pdf'
+      }
+    end
+  end
+
+  def pdf
+    @articles      = Article.text_search(params[:query])
   end
 
   # GET /articles/1
