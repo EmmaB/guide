@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
       format.pdf {
         @pdf = true
         html = render_to_string(:layout => "plain", :action => 'pdf',  :formats => :html)
-        kit  = PDFKit.new(html, :margin_right => '1.5in', :margin_left => '0.75in', :toc => "")
+        kit  = PDFKit.new(html, :margin_right => '1.5in', :margin_left => '0.75in')
         kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css"
         send_data kit.to_pdf, :filename => "Bibliocloud Manual #{Time.now}.pdf", :type => 'application/pdf'
       }
