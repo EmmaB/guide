@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
 
       format.pdf {
         @pdf = true
-        set_margin = '0.9'
+        set_margin = '0.8'
         html = render_to_string(:layout => "plain", :action => 'pdf',  :formats => :html)
         kit  = PDFKit.new(html, :page_size => "Letter",     :print_media_type => true, :orientation => 'Portrait', :margin_top => set_margin+'in', :margin_right => set_margin+'in', :margin_bottom => set_margin+'in', :margin_left => set_margin+'in')
         kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css.scss"

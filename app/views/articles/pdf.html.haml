@@ -19,7 +19,9 @@
               %div{:class => 'bs-callout bs-callout-info'}
                 %small.uppercase
                   In this section:
+                  %br
                 %ul
                   - article.what_we_learn.each do |learn|
-                    %li= learn
+                    %li
+                      = learn
             %p= simple_format article.body

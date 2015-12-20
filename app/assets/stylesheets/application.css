@@ -11,5 +11,7 @@
  *= require_self
  *= require formtastic-bootstrap
  *= require social-share-button
- *= require_tree .
+ *= require skin-blue
+ *= require theDocs.all.min
+ *= require custom
  */
