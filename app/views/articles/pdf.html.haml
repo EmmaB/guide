@@ -14,5 +14,5 @@
         %h6= section.name
         %ul.nav.nav-list
           - section.articles.order(:sequence).each do |article|
-            %h5= article.title
+            %h7= article.title
             %p= simple_format article.body
