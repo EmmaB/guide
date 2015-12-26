@@ -21,7 +21,7 @@ h7 { font-family: Roboto; font-size:20px; margin-top: 20px !important; margin-bo
     color: #777;  background-size: 100% auto; padding:7px; display:block }
 h3 { font-family: Roboto; font-size:19px; line-height: 26px; margin-top: 15px; color: rgb(82, 86, 89)}
 h4 { font-family: Roboto; font-size:17px; line-height: 20px; margin-top: 10px; color: rgb(82, 86, 89); font-style: bold }
-h5 { font-family: Roboto; font-size:15px; margin-top: 5px; font-style: bold}
+h5 { font-family: Roboto !important; font-size:15px; margin-top: 5px}
 hr     { border:0; margin:0; padding:0; height:1px; color:#6D5CAE; background-color:#6D5CAE; }
 p { font-family: Roboto; max-width: 550px;  margin-bottom: 6px ; margin-top: 6px ;  font-weight: 400 !important }
 
@@ -133,6 +133,8 @@ table {
 td,
 th {
   padding: 0;
+  font-family: Roboto;
+  font-size:9px;
 }
 * {
   -webkit-box-sizing: border-box;
