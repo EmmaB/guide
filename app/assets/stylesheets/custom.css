@@ -102,3 +102,24 @@ body {
 h4 {
   margin-top: 30px !important;
 }
+
+.success {
+  color: green
+}
+h5.blue a {
+  color: #6D5CAE
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */

@@ -4,6 +4,10 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
+    sanitized = ActionController::Base.helpers.sanitize(params[:query])
+    @query = (params[:query])
+    @pg_search_documents = PgSearch.multisearch(params[:query]).select(["ts_headline(pg_search_documents.content, plainto_tsquery('english', ''' ' || '#{sanitized}' || ' ''' || ':*')) AS excerpt"])
+
     @articles      = Article.text_search(params[:query])
     respond_to do |format|
       format.html {}
@@ -12,7 +16,7 @@ class ArticlesController < ApplicationController
         @pdf = true
         set_margin = '0.8'
         html = render_to_string(:layout => "plain", :action => 'pdf',  :formats => :html)
-        kit  = PDFKit.new(html, :page_size => "Letter",     :print_media_type => true, :orientation => 'Portrait', :margin_top => set_margin+'in', :margin_right => set_margin+'in', :margin_bottom => set_margin+'in', :margin_left => set_margin+'in')
+        kit  = PDFKit.new(html, :page_size => "Letter",   :lowquality => true, :print_media_type => true, :orientation => 'Portrait', :margin_top => set_margin+'in', :margin_right => set_margin+'in', :margin_bottom => set_margin+'in', :margin_left => set_margin+'in')
         kit.stylesheets << "#{Rails.root}/app/assets/stylesheets/pdf.css.scss"
         send_data kit.to_pdf, :filename => "Bibliocloud Manual #{Time.now}.pdf", :type => 'application/pdf'
       }

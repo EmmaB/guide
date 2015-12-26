@@ -2,30 +2,36 @@
   .col-sm-1
   .col-sm-10
     %h3 Search results
-    %table.table
-      %thead
-        %tr
-          - if user_signed_in?
-            %th
-          %th Section
-          %th Title
-          %th
-          %th
-          %th
-      %tbody
-        - @articles.order(:sequence).each do |article|
+    - @pg_search_documents.each do |pg_search_document|
+      %h5.blue= link_to pg_search_document.searchable.title, "../#{(pg_search_document.searchable.class).to_s.downcase!.pluralize}/#{pg_search_document.searchable.id}"
+      %p.success http://guide.bibliocloud.com/#{(pg_search_document.searchable.class).to_s.downcase!.pluralize}/#{pg_search_document.searchable.id}
+      = (highlight(excerpt(sanitize(pg_search_document.content, :tags=>[]), @query), @query)) rescue "..."
+
+    - if user_signed_in?
+      %table.table
+        %thead
           %tr
             - if user_signed_in?
-              %td= best_in_place article, :sequence
-            %td= article.section.try(:name)
-            %td= article.title
-            %td= truncate(sanitize(article.body, :tags=>[]), :length => 150)
-            - if user_signed_in?
-              %td= link_to 'Edit', edit_article_path(article)
-              %td= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }
-            - else
-              %td= link_to "Read more", article_path(article)
-    - if user_signed_in?
-      %br
-        = link_to 'New Article', new_article_path
-  .col-sm-1
+              %th
+            %th Section
+            %th Title
+            %th
+            %th
+            %th
+        %tbody
+          - @articles.order(:sequence).each do |article|
+            %tr
+              - if user_signed_in?
+                %td= best_in_place article, :sequence
+              %td= article.section.try(:name)
+              %td= article.title
+              %td= truncate(sanitize(article.body, :tags=>[]), :length => 150)
+              - if user_signed_in?
+                %td= link_to 'Edit', edit_article_path(article)
+                %td= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }
+              - else
+                %td= link_to "Read more", article_path(article)
+      - if user_signed_in?
+        %br
+          = link_to 'New Article', new_article_path
+    .col-sm-1

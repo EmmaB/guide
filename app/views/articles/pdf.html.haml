@@ -1,3 +1,54 @@
+%h2 General Products Ltd proudly presents the
+%h0 Bibliocloud user guide
+%h4 Created in PDF from http://guide.bibliocloud.com
+%h4= Date.today.strftime('%d %B %Y')
+
+.pb_before
+%h6 Introduction
+%h3 Bibliocloud makes you a better publisher
+
+%p Bibliocloud is the easiest way for you and your team to get control of your publishing workflow, and the Guide can help you get started.
+
+%p It holds all your information:
+%ul
+  %li product information such as the title, ISBN, format, subject classifications and a host of other data to make your products discoverable
+  %li contract information – the details of the deal you made with the author or agent
+  %li your address book
+  %li production information – the details of your production runs, including estimates, specs and orders
+  %li rights information – the rights you’ve licensed, and then sub-licensed
+  %li sales, payments and advances information
+
+%p And it does a bunch of publishing tasks for you, including:
+%ul
+  %li generating AI pdfs
+  %li generating batches of royalty statements
+  %li sending ONIX to organisations such as Nielsen and Amazon
+  %li sending print orders to your printers
+
+%p It helps with the process of getting books from being a glint in the commissioning editor’s eye to an actual stack of copies on the shelf in Waterstones:
+%ul
+  %li Schedules with a Gantt chart view
+  %li Acquisition management
+  %li Forecasting and actuals on title and product-level P&Ls
+
+%p And it’s pragmatic, with tools to help in the real publishing world:
+%ul
+  %li Amazon real-time data checker
+  %li Discoverability scorecard
+  %li BIC Excellence scorecard
+  %li Incremental ONIX, API and Excel template exporters for a growing list of third parties including Samsung, Qbend, Ingram etc
+  %li Background FTPing of covers and data
+  %li Dead simple sales importers from your distributor and Amazon
+  %li One-click Rights Guide
+  %li One-click multi-page catalogues, straight into XML for import into an InDesign template
+  %li Product API for integration with your customer facing website and third-party services
+
+%p The whole shebang is helped along with a handy toolkit: APIs, bulk importers and exporters, advanced search-and-filter tools, a lot of templates and other helpful tools to reduce the amount of data entry you have to do.
+
+%p We also make implementation as painless as possible. One of the biggest hurdles that publishers feel they face is to unpick their existing data and get it into a state where it can be imported into a new system. Thankfully we’re dab hands at legacy data migration. We’ve seen it all, and we’ll take on the burden of your data migration as part of your Bibliocloud implementation.
+%h4 This guide introduces you to Bibliocloud, and deep-dives into exactly how to use it to get the most out of the software so you can publish as effectively as possible. We hope you enjoy the read!
+
+.pb_before
 - ["Workshops", "Resources"].each do |segment|
   %br
   %h1= "Section: #{segment}"
@@ -11,7 +62,7 @@
       - top_level_section_number += 1
       %hr
       - top_level_section.sections.order(:sequence).each do |section|
-        %h6= section.name
+        %h6.pb_before= section.name
         %ul.nav.nav-list
           - section.articles.order(:sequence).each do |article|
             %h7= article.title
@@ -24,4 +75,4 @@
                   - article.what_we_learn.each do |learn|
                     %li
                       = learn
-            %p= simple_format article.body
+            %p= raw article.body
