@@ -23,13 +23,17 @@
       .row
         .col-md-3.col-sm-3
         .col-md-3.col-sm-3
-          %p Copyright General Products Ltd &copy; 2015. All rights reserved
+          %p Copyright General Products Ltd &copy; 2016. All rights reserved
         .col-md-6.col-sm-6
           %ul.footer-menu
             %li
-              %a{:href => "https://drive.google.com/folderview?id=0B_ZSFbVemp5mb012UTZ4US1vWnM&usp=sharing"} Monthly update archive
+              = link_to "About", "http://bibliocloud.com"
             %li
-              %a{:href => "mailto:info@bibliocloud.com"} Contact us
+              = link_to "Code::Read", "http://www.coderead.co"
+            %li
+              %a{:href => "https://drive.google.com/folderview?id=0B_ZSFbVemp5mb012UTZ4US1vWnM&usp=sharing"} Monthly updates
+            %li
+              %a{:href => "mailto:info@bibliocloud.com"} Contact
             - if user_signed_in?
               = link_to "Sign out",  destroy_user_session_path,  :method => :delete
   :javascript
