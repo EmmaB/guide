@@ -2,13 +2,13 @@
   = render "layouts/nav_bar"
   .banner.banner-full-height.overlay-black{:style => "background-image: url(images/banner1.jpg);"}
     .container.text-center
-      %h1 Bibliocloud Guides
+      %h1 Bibliocloud Guide
       %br
         %br
           %br
             %br
               %p
-                .btn.btn-white.btn-xl= link_to "Getting started", article_path(Article.find_by(:title => "Why Bibliocloud") || Article.first)
+                .btn.btn-white.btn-xl= link_to "Get started", article_path(Article.find_by(:title => "Why Bibliocloud") || Article.first)
 
     %ul.social-icons
       %li
