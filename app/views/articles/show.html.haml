@@ -18,7 +18,6 @@
 
     .col-md-3
       %hr
-
       .center= social_share_button_tag(@article.title, :url => request.original_url, :popup => "true")
       - if user_signed_in?
         = link_to "edit", edit_article_path(@article)
