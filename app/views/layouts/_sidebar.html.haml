@@ -4,10 +4,10 @@
     .fixed
       .section-nav
         #guide-accordion.accordion
-          - ["Workshops", "Resources"].each do |segment|
+          - ["Resources", "Workshops"].each do |segment|
             %br
             .accordion-spacer
-              %span.spacer= segment
+              %span.spacer= segment == "Workshops" ? "Before you buy" : "Manual"
               %hr
               - Section.where(:section_id => nil, :area => segment).order(:sequence).each do |top_level_section|
                 - if [top_level_section.id, top_level_section.sections.pluck(:id)].flatten.include? @article.section_id
