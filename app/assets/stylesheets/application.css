@@ -15,3 +15,7 @@
  *= require theDocs.all.min
  *= require custom
  */
+
+ label {
+   color: black
+ }
