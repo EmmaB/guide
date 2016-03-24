@@ -13,14 +13,14 @@
     }
 .nav>li>a {
   padding: 4px 10px 3px !important;
-  color: grey !important;
+  color: rgba(0,0,0,.87) !important;
   font-size: 95%;
 }
 
 .nav>li>a:hover {
     color: white !important;
     transition: background-color 0.5s ease !important;
-    background-color: #6D5CAE !important;
+    background-color: #FE8663 !important;
   }
 .code-tabs .languages .btn.active,.code-tabs .languages .btn:active,.navbar-default.navbar-light .active>a,.navbar-default.navbar-light .active>a:focus,.navbar-default.navbar-light .active>a:hover,.navbar-default.navbar-light .open>a,.navbar-default.navbar-light .open>a:focus,.navbar-default.navbar-light .open>a:hover,.navbar-default.navbar-light li>a:focus,.navbar-default.navbar-light li>a:hover,.promo>.fa,.promo>.glyphicon,.sidebar-boxed .sidenav>li>a.open,.sidebar-boxed .sidenav>li>a:hover,.sidenav a.active,.sidenav a:focus,.sidenav a:hover,.sidenav>li>a.active,.sidenav>li>a:focus,.sidenav>li>a:hover,.tabs-btn .nav-tabs li.active a,.tabs-icon .nav-tabs>li.active a,.tabs-text .nav-tabs>li.active a,.toc a:active,.toc a:hover,a,a:focus,a:hover,h1 a:before,h2 a:before,h3 a:before{color:#6D5CAE}.sidebar-line .sidenav a.active:before,.sidenav>li>ul a.active:before,.site-header .navbar{background-color:#6D5CAE}.tabs-icon .nav-tabs>li.active,.tabs-text .nav-tabs>li.active{border-bottom-color:#6D5CAE}.grid-view li{border-top-color:#6D5CAE}
   hr {
@@ -37,8 +37,8 @@
 }
 
 .navbar-default .navbar-brand, .navbar-default .navbar-brand:focus, .navbar-default .navbar-brand:hover {
-  color: #6D5CAE;
-  font-weight: 600
+  color: rgba(0,0,0,.54);
+  font-weight: 500
 }
 
 h1 {
@@ -60,7 +60,7 @@ h2 {
   /*border-bottom: 6px solid orange;*/
   height: 150px;
   object-fit: none;
-  border-bottom: 6px solid rgba(255, 0, 0, .5);
+  border-bottom: 6px solid rgb(253, 132, 99)
 }
 
 
