@@ -4,41 +4,60 @@
     .fixed
       .section-nav
         #guide-accordion.accordion
-          - ["Resources", "Workshops"].each do |segment|
-            %br
-            .accordion-spacer
-              %span.spacer= segment == "Workshops" ? "Before you buy" : "Manual"
-              %hr
-              - Section.where(:section_id => nil, :area => segment).order(:sequence).each do |top_level_section|
-                - if [top_level_section.id, top_level_section.sections.pluck(:id)].flatten.include? @article.section_id
-                  - klassb = 'in'
-                  - klassd = 'collapsed'
-                - else
-                  - klassb = ''
-                  - klassd = ''
-                .accordion-group.panel
-                  .accordion-heading
-                    %a{:class => "#{klassd} accordion-toggle", "data-parent" => "#guide-accordion", "data-target" => "##{top_level_section.id}", "data-toggle" => "collapse"}
-                      %span= top_level_section.name
+          %br
+          .accordion-spacer
+            %span.spacer Manual
+            %hr
+            - Section.where(:section_id => nil, :area => "Manual").order(:sequence).each do |top_level_section|
+              - if top_level_section.id == @article.section_id
+                - klassb = 'in'
+                - klassd = 'collapsed'
+              - else
+                - klassb = ''
+                - klassd = ''
+              .accordion-group.panel
+                .accordion-heading
+                  %a{:class => "#{klassd} accordion-toggle", "data-parent" => "#guide-accordion", "data-target" => "##{top_level_section.id}", "data-toggle" => "collapse"}
+                    %span= top_level_section.name
+                %div{:id => top_level_section.id, :class => "collapse accordion-body #{klassb}"}
+                  .accordion-inner
+                    %ul.nav.nav-list
+                      - top_level_section.articles.order(:sequence).each do |article|
+                        %li
+                          = link_to article.title, article_path(article)
 
 
-                  %div{:id => top_level_section.id, :class => "#{klassb} collapse accordion-body"}
-                    .accordion-inner
-                      %div{:id => top_level_section.id, :class => 'accordion'}
-                        .accordion-group.panel
-                          - top_level_section.sections.order(:sequence).each do |section|
-                            - if section.id == @article.section_id
-                              - klassa = 'in'
-                              - klassc = 'collapsed'
-                            - else
-                              - klassa = ''
-                              - klassc = ''
-                            .accordion-heading
-                              %a{:class => "#{klassc} accordion-toggle", "data-parent" => "##{top_level_section.id}", "data-target" => "##{section.id}", "data-toggle" => "collapse"}
-                                = section.name
-                            %div{:id => section.id, :class => "collapse accordion-body #{klassa}"}
-                              .accordion-inner
-                                %ul.nav.nav-list
-                                  - section.articles.order(:sequence).each do |article|
-                                    %li
-                                      = link_to article.title, article_path(article)
+
+            %span.spacer Before you buy
+            %hr
+            - Section.where(:section_id => nil, :area => "Workshops").order(:sequence).each do |top_level_section|
+              - if [top_level_section.id, top_level_section.sections.pluck(:id)].flatten.include? @article.section_id
+                - klassb = 'in'
+                - klassd = 'collapsed'
+              - else
+                - klassb = ''
+                - klassd = ''
+              .accordion-group.panel
+                .accordion-heading
+                  %a{:class => "#{klassd} accordion-toggle", "data-parent" => "#guide-accordion", "data-target" => "##{top_level_section.id}", "data-toggle" => "collapse"}
+                    %span= top_level_section.name
+                %div{:id => top_level_section.id, :class => "#{klassb} collapse accordion-body"}
+                  .accordion-inner
+                    %div{:id => top_level_section.id, :class => 'accordion'}
+                      .accordion-group.panel
+                        - top_level_section.sections.order(:sequence).each do |section|
+                          - if section.id == @article.section_id
+                            - klassa = 'in'
+                            - klassc = 'collapsed'
+                          - else
+                            - klassa = ''
+                            - klassc = ''
+                          .accordion-heading
+                            %a{:class => "#{klassc} accordion-toggle", "data-parent" => "##{top_level_section.id}", "data-target" => "##{section.id}", "data-toggle" => "collapse"}
+                              = section.name
+                          %div{:id => section.id, :class => "collapse accordion-body #{klassa}"}
+                            .accordion-inner
+                              %ul.nav.nav-list
+                                - section.articles.order(:sequence).each do |article|
+                                  %li
+                                    = link_to article.title, article_path(article)
